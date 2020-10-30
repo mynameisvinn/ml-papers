@@ -16,4 +16,6 @@ can you match the character `x` to its originating alphabet?
 this task is considered “one-shot learning” because you have one shot to correctly classify the letter, despite never seeing that particular alphabet before.
 
 ## deep dive
-* preparing the training data
+* preparing the [training data](https://github.com/mynameisvinn/omniglot/blob/master/preparing_data.md)
+* preparing the test data
+* evaluating performance
