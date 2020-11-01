@@ -16,8 +16,10 @@ this task is considered “one-shot learning” because you have one shot to cor
 ## siamese neural nets to the rescue
 one of the most popular approaches to the one-shot learning problem is [siamese neural networks for one shot image recognition](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf), presented at iclr 2015.
 
+(there are several other approaches, including [openai's reptile](https://arxiv.org/abs/1803.02999)).
+
 ## deep dive into siamese neural nets
 * preparing the [training data](https://github.com/mynameisvinn/omniglot/blob/master/preparing_data.md)
 * preparing the [test data](https://github.com/mynameisvinn/omniglot/blob/master/preparing_testdata.md)
-* computing loss
+* [computing loss](https://github.com/mynameisvinn/paper-omniglot/blob/master/loss.md)
 * [evaluating](https://github.com/mynameisvinn/omniglot/blob/master/evaluation.md) performance
