@@ -1,4 +1,5 @@
-# computing loss
+# Computing loss
+The Siamese model outputs an embedding that represents the similarity between `x1` and `x2`.
 ```python
 def forward(self, x1, x2):
     x1 = self.convs(x1)
@@ -17,12 +18,12 @@ unlike typical models, we dont update parameters after a single pass. with siame
 
 `output1` and `output2` are then used to compute a distance `d`, which is passed through a single fully connected layer.
 
-# whats the objective?
-loss is computed by comparing this predicted similarity score against ground truth labels (where `y=1` if the images are examples of the same character and `y=0` if the images are not).
+# Objective
+The objective function is designed so that the model outputs 1 when the label is 1 (which indicates the two images are instances of the same character) and 0 when the label is 0.
 ```python
-criterion = nn.BCEWithLogitsLoss()
+criterion = nn.BCEWithLogitsLoss()  # binary cross entropy
 ...
-for epoch in range(num_epochs):  # number of passes through training dataset
+for epoch in range(num_epochs):
     for img1, img2, labels in train_loader:
     	...
     	similarity = model(img1, img2)

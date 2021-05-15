@@ -1,13 +1,13 @@
-# preparing training data
+# Training data
 
-## similar images
-50% of samples will consist similar images, which means they are samples drawn from the same character:
+## Similar images
+50% of the dataset consists "similar" pairs of objects, which means they are instances drawn from a single character:
 
 ```python
-category = random.choice(categories)  # a category is a alphabet
-character = random.choice(category[1])  # character is the character eg the english alphabet has 26 characters to choose from
+category = random.choice(categories)  # randomly select an alphabet
+character = random.choice(category[1])  # choose a char from this alphabet
 
-# pick two random examples for a given character
+# pick two random instances of this character
 imgDir = root_dir + category[0] + '/' + character  
 img1Name = random.choice(os.listdir(imgDir))
 img2Name = random.choice(os.listdir(imgDir))
@@ -15,10 +15,10 @@ img2Name = random.choice(os.listdir(imgDir))
 img1 = Image.open(imgDir + '/' + img1Name)
 img2 = Image.open(imgDir + '/' + img2Name)
 
-label = 1.0  # label 1 indicates they are similar images aka from the same class
+label = 1.0  # label 1 indicates they are two instances from a single character
 ```
-## dissimilar images
-the other 50% of samples consists of dissimilar images, where each image comes from a unique alphabet.
+## Dissimilar images
+The other half consists of "dissimilar" objects. These are images are drawn from different alphabets.
 ```python
 category1 = random.choice(categories)
 character1 = random.choice(category1[1])  # pick the second example because example 0 is used for similar images
